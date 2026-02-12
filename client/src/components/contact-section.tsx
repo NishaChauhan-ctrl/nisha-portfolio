@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useCallback } from "react";
-import { Mail, ArrowUpRight, Calendar } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
 import { SiLinkedin, SiGithub } from "react-icons/si";
 import { Badge } from "@/components/ui/badge";
 import confetti from "canvas-confetti";
@@ -32,12 +32,6 @@ const contactLinks = [
     href: "https://github.com/NishaChauhan-ctrl",
     colorIndex: 3,
   },
-  {
-    icon: Calendar,
-    label: "Schedule",
-    href: "#",
-    colorIndex: 4,
-  },
 ];
 
 function CloudShape({ children, colorIndex, className = "" }: { children: React.ReactNode; colorIndex: number; className?: string }) {
@@ -53,49 +47,6 @@ function CloudShape({ children, colorIndex, className = "" }: { children: React.
         {children}
       </div>
     </div>
-  );
-}
-
-function SparklyHeart() {
-  return (
-    <motion.div
-      className="relative"
-      animate={{ scale: [1, 1.05, 1] }}
-      transition={{ duration: 2, repeat: Infinity }}
-    >
-      <svg width="70" height="65" viewBox="0 0 70 65" fill="none">
-        <defs>
-          <linearGradient id="heartGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="hsl(340, 80%, 55%)" />
-            <stop offset="50%" stopColor="hsl(320, 75%, 60%)" />
-            <stop offset="100%" stopColor="hsl(300, 70%, 65%)" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M35 60 L30 55 C12 38, 2 28, 2 18 C2 10, 8 4, 16 4 C22 4, 28 8, 35 14 C42 8, 48 4, 54 4 C62 4, 68 10, 68 18 C68 28, 58 38, 40 55 Z"
-          fill="url(#heartGrad)"
-        />
-      </svg>
-      {[...Array(6)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 rounded-full bg-white"
-          style={{
-            top: `${15 + Math.random() * 35}px`,
-            left: `${10 + Math.random() * 50}px`,
-          }}
-          animate={{
-            opacity: [0, 1, 0],
-            scale: [0.5, 1.5, 0.5],
-          }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            delay: i * 0.3,
-          }}
-        />
-      ))}
-    </motion.div>
   );
 }
 
@@ -190,14 +141,6 @@ export function ContactSection() {
             </CloudShape>
           </motion.a>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.35, type: "spring" }}
-          >
-            <SparklyHeart />
-          </motion.div>
-
           <motion.a
             href={contactLinks[2].href}
             target="_blank"
@@ -211,20 +154,6 @@ export function ContactSection() {
             <CloudShape colorIndex={3}>
               <SiGithub className="w-8 h-8 text-foreground/70" />
               <span className="text-xs text-muted-foreground font-medium">GitHub</span>
-            </CloudShape>
-          </motion.a>
-
-          <motion.a
-            href="#"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="no-underline"
-            data-testid="link-contact-schedule"
-          >
-            <CloudShape colorIndex={4}>
-              <Calendar className="w-8 h-8 text-foreground/70" />
-              <span className="text-xs text-muted-foreground font-medium">Schedule</span>
             </CloudShape>
           </motion.a>
         </div>

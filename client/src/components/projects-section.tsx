@@ -18,25 +18,25 @@ const projects = [
     github: "https://github.com/NishaChauhan-ctrl/PRD-Generator",
   },
   {
-    title: "Feature Prioritization Dashboard",
+    title: "Tracklytics",
     description:
-      "Clustered user feedback using NLP to surface top feature requests. Scored and ranked features by NPS impact, request volume, and customer tier to help product teams make data-driven prioritization decisions.",
-    tags: ["NLP", "Data Analytics", "Python", "Clustering"],
+      "Tracklytics is a music behavior analytics dashboard that connects to your Spotify account and transforms listening activity into structured insights.",
+    tags: ["Python", "SQL", "Tableau", "React", "Data Analytics"],
     icon: BarChart3,
     color: "bg-accent/10 text-accent",
     link: null,
-    github: "https://github.com/NishaChauhan-ctrl/feature-prioritization-dashboard",
+    github: "https://github.com/NishaChauhan-ctrl/Tracklytics",
   },
-  {
-    title: "Support Escalation Engine",
-    description:
-      "Built an AI-powered system that automatically categorizes and escalates customer support tickets based on urgency, sentiment analysis, and historical patterns. Reduced average response time significantly.",
-    tags: ["LLMs", "Sentiment Analysis", "Automation"],
-    icon: MessageSquare,
-    color: "bg-chart-2/10 text-chart-2",
-    link: null,
-    github: "https://github.com/NishaChauhan-ctrl/customer-support-agent",
-  },
+ // {
+   // title: "Support Escalation Engine",
+    //description:
+     // "Built an AI-powered system that automatically categorizes and escalates customer support tickets based on urgency, sentiment analysis, and historical patterns. Reduced average response time significantly.",
+    //tags: ["LLMs", "Sentiment Analysis", "Automation"],
+    //icon: MessageSquare,
+    //color: "bg-chart-2/10 text-chart-2",
+    //link: null,
+    //github: "https://github.com/NishaChauhan-ctrl/customer-support-agent",
+ // },
 ];
 
 export function ProjectsSection() {
